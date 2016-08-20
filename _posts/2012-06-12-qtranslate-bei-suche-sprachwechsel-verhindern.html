@@ -1,0 +1,33 @@
+---
+
+title: avoid switch to default language when searching with qTranslate
+date: 2012-06-12 01:14:17.000000000 +02:00
+type: posts
+published: true
+status: publish
+categories:
+- Wordpress
+tags: []
+meta:
+  _edit_last: '1'
+author:
+  login: patmuk
+  email: patrick.mukherjee@gmail.com
+  display_name: patmuk
+  first_name: ''
+  last_name: ''
+---
+<p><!--:de-->Nutzt man den Query-Modus (die Sprache wird mit '?lang=de' ausgewählt) springt bei jeder Such die Webseite auf die Standardsprache (z.B.: nach Browser-Einstellungen) um.<br />
+Abhilfe:<br />
+Unter 'Design' -&gt; 'Editor' bei der Datei 'Searchform.php'<br />
+vor dem '<\from>' Tag folgendes hinzufügen:</p>
+<p><code>&lt;input type="hidden" name="lang" value="&lt;?php echo qtrans_getLanguage(); ?&gt;"&gt;</code></p>
+<p>... so wird der Sprachenparameter als verstecktes Feld an der URL hinzugefügt.</p>
+<p>Quelle: http://stackoverflow.com/questions/8435113/wordpress-qtranslate-keep-dont-keep-lang-on-word-search<!--:--><!--:en-->When using the query-mode (the language is noted as an attached '?lang=en' in the URL) a performed search shows the results in the default language (which could be the one selected in the browser settings, not the one chosen by a user).</p>
+<p>The Solution:<br />
+Add the following to 'Searchform.php' in 'design' -&gt; 'Editor'<br />
+just in front of the '<\form>' tag:</p>
+<p><code>&lt;input type="hidden" name="lang" value="&lt;?php echo qtrans_getLanguage(); ?&gt;"&gt;</code></p>
+<p>... this way the language-parameter will be added to the URL as a hidden field.</p>
+<p>Source: http://stackoverflow.com/questions/8435113/wordpress-qtranslate-keep-dont-keep-lang-on-word-search<!--:--><!--:sr--></p>
+<p><!--:--></p>

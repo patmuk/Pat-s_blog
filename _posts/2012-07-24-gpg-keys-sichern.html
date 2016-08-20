@@ -1,0 +1,68 @@
+---
+
+title: secure gpg keys
+date: 2012-07-24 16:18:43.000000000 +02:00
+type: posts
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _oembed_067e4509f81a5c73f01402873a1d6008: "{{unknown}}"
+  _edit_last: '1'
+  _oembed_0c571bd5b628225989cd788218263140: "{{unknown}}"
+  _oembed_71dbfdd9652a36328ddf838eac2f2a08: "{{unknown}}"
+  _oembed_a560ffe19e264e52ef223f7d419772bb: "{{unknown}}"
+  _oembed_8d9c8e5fbb274ce8dae4e81d644509dd: "{{unknown}}"
+  _oembed_261fa27f551738ad30adb7cf746a5aa6: "{{unknown}}"
+author:
+  login: patmuk
+  email: patrick.mukherjee@gmail.com
+  display_name: patmuk
+  first_name: ''
+  last_name: ''
+---
+<p><!--:de--><br />
+Ich habe mir wieder gpg-keys zugelegt.<br />
+Hier meine empfohlenen Schritte:<br />
+1. Erstmal einen oder mehrere Keys anlegen:<br />
+Tutorials gibt es hierfür viele, ich verweise auf meinen letzten Post:</p>
+<p>http://patrick.mukherjee.de/?p=151</p>
+<p>2. eigene Keys auflisten:<br />
+<code>gpg –list-secret-keys</code></p>
+<p>Jetzt für jeden Key:<br />
+2. Public Key als Textdatei speichern. Kann man weitergeben, ist durch ASCCII-Format sicher for Mailfiltern, etc.:<br />
+gpg -ao pubKey_.asc –export<br />
+wobei entweder für die short-ID des keys oder die assoziierte Mailadresse steht.</p>
+<p>3. Jetzt unbedingt “revokation Certificate” erzeugen! So kann man jederzeit seinen Key von den Key-Servern entfernen, sollte man sein Passwort mal vergessen. Das Certificate kann man nur mit dem Passwort und den privaten Schlüsselteil erstellen!<br />
+gpg -ao revokeCert_.asc –gen-revoke</p>
+<p>4. Nun, optional, den privaten Schlüsselteil als ASCCII-Datei speichern. Das ganze aber durch ein Passwort verschlüsselt! Gut gesichert aufheben.<br />
+gpg -a –export-secret-keys | gpg -aco privKey_.asc</p>
+<p>5. Den Schlüssel bei Keyservern bekannt machen. Es reicht der eine – der öffentliche Schlüsselteil wird dabei automatisch auf die anderen Server verteilt.<br />
+gpg –send-keys</p>
+<p>… mir ist beim Ausprobieren ein kleineres Maleur passiert … ich habe einen (Sub-)Schlüssel erstellt, diesen veröffentlicht und vor dem löschen nicht zurückgezogen. Nun bleibt er leider für ewig online und wird jeden verwirren, der meinen Schlüssel sucht.<br />
+Also, bitte verwendet nicht diese Schlüssel (da sie nirgends existieren):</p>
+<p><!--:--><br />
+<!--:en--><br />
+I (re-)created gpg-keys.<br />
+Here my recommended steps:<br />
+1. First create one or more keys:<br />
+There are many tutorials, I recommend the one mentioned in my last post:<br />
+http://patrick.mukherjee.de/?p=151</p>
+<p>2. List all keys:<br />
+gpg --list-secret-keys</p>
+<p>now save each:<br />
+2. export the public-key as a text-file. This can be distributed without being afraid of mail-filtern, etc.:<br />
+gpg -ao pubKey_<id>.asc --export <id><br />
+where <id> stands for either the short-ID of the key or the associated email-addresse.</p>
+<p>3. The most important step: create a "revokation certificate"! So that you can revocate your published key at any time (maybe you forget the passphrase). This is only possible using the passphrase and the private key!<br />
+gpg -ao revokeCert_<id>.asc --gen-revoke <id></p>
+<p>4. Optionally save the private key in a ASCCII-file. The file is, of cause, encrypted using a passphrase. Store it very secure (you can even print it).<br />
+gpg -a --export-secret-keys <id> | gpg -aco privKey_<id>.asc </p>
+<p>5. Now publish your key(s) to a key-server. It is sufficient to publish it to one server - the server distributes it to all other server.<br />
+gpg --send-keys <id></p>
+<p>... while trying around I made a mistake and deleted my key prior revoking the key. Now the wrongly published keys are stored online for all eternety and will confuse people, who look for my key.<br />
+So, please, do not use these keys, as they do not exist anymore:<br />
+<!--:--><br />
+<a href="http://pgp.surfnet.nl/pks/lookup?op=get&search=0x3A5F851AC80A87DF">2048R/C80A87DF</a><br />
+<a href="http://pgp.surfnet.nl/pks/lookup?op=get&search=0xD60D17993BD998A9">2048R/3BD998A9</a></id></id></id></id></id></id></id></id></p>
