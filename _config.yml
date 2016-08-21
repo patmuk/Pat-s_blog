@@ -121,7 +121,7 @@ exclude:
   - .sass-cache
   - assets/js/plugins
   - assets/js/_main.js
-  - assets/js/vendor
+#  - assets/js/vendor
   - Capfile
   - CHANGELOG
   - config
