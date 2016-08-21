@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "de"
-title                    : "<h3>Patrick Mukherjee</h3><h4>Dr.-Ing.</h4>"
+title                    : "Patrick Mukherjee" #"<h3>Patrick Mukherjee</h3><h4>Dr.-Ing.</h4>"
 title_separator          : "-"
 name                     : "Patrick Mukherjee"
 description              : "An amazing website."
@@ -82,7 +82,7 @@ author:
   avatar           : "me/cropped-Bild-01-email.jpg"
   bio              : "Dr.Ing."
   location         : "Berlin, Germany"
-  email            :
+  email            : "patrick@mukherjee.de"
   uri              :
   bitbucket        :
   codepen          :
@@ -90,7 +90,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "patmuk"
   google_plus      :
   keybase          :
   instagram        :
