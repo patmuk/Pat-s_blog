@@ -11,7 +11,7 @@ title                    : "Patrick Mukherjee" #"<h3>Patrick Mukherjee</h3><h4>D
 title_separator          : "-"
 name                     : "Patrick Mukherjee"
 description              : "An amazing website."
-url                      : http://patrick.mukherjee.de # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : #http://patrick.mukherjee.de # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 mode                     : prod
 repository               : "patmuk/patmuk.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
