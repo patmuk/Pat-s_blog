@@ -16,8 +16,13 @@ author:
   first_name: ''
   last_name: ''
 permalink: my_software/
+languages:
+  de
+  en
 ---
-<p>{% if site.locale == "de" %}<br />
+{% include fallback_lang_support %}
+
+<p>{% if locale == "de" %}<br />
 Die folgenden Programme entwickelte ich im Rahmen meiner Forschung zu Peer-to-Peer basierten software Entwicklungsumgebungen:</p>
 <ul>
   <li><a title="PlatinVC" href="platinvc/">PlatinVC</a> - ein Peer-to-Peer basiertes Versionskontrollsystem</li>
@@ -25,16 +30,10 @@ Die folgenden Programme entwickelte ich im Rahmen meiner Forschung zu Peer-to-Pe
   <li><a title="ASKME" href="askme/">ASKME</a> - ein Eclipse plugin zur kommunikation unter Softwareentwicklern</li>
 </ul>
 <p>{% endif %}<br />
-{% if site.locale == "en" %}During my research in peer-to-peer software development environments, I have designed and developed:</p>
+{% if locale == "en" %}During my research in peer-to-peer software development environments, I have designed and developed:</p>
 <ul>
   <li><a title="PlatinVC" href="platinvc/">PlatinVC</a> - a peer-to-peer based version control system</li>
   <li><a title="Piki" href="piki/">PIKI</a> - a peer-to-peer based Wiki Engine</li>
   <li><a title="ASKME" href="askme/">ASKME</a> - an Eclipse plugin for communication among software developers</li>
 </ul>
-<p>{% endif %}{% if site.locale == "sr" %}During my research in peer-to-peer software development environments, I have designed and developed:</p>
-<ul>
-  <li><a title="PlatinVC" href="platinvc/">PlatinVC</a> - a peer-to-peer based version control system</li>
-  <li><a title="Piki" href="piki/">PIKI</a> - a peer-to-peer based Wiki Engine</li>
-  <li><a title="ASKME" href="askme/">ASKME</a> - an Eclipse plugin for communication among software developers</li>
-</ul>
-<p>{% endif %}</p>
+{% endif %}

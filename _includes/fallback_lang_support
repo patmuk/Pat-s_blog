@@ -1,0 +1,28 @@
+{% comment %}
+fallback to a supported language
+usage:
+ list all supported languages in the YML-FM of the page
+ and include this file
+ like this:
+  ---
+  languages:
+    en
+    de
+  ---
+  {% include fallback_lang_support %}
+{% endcomment %}
+
+{% assign locale = site.locale %}
+{% unless page.languages contains locale %}
+  {% if page.languages contains "en" %}
+    {% assign locale = "en" %}
+    <p><i>Sorry, this post is not available in your language. Showing it in English instead!</i></p>
+  {% endif %}
+  {% if page.languages contains "de" %}
+    {% assign locale = "de" %}
+    <p><i>Sorry, diesen Eintrag gibt es nicht in Deiner Sprache. Zeige ihn stattdessen auf deutsch!</i></p>
+  {% endif %}
+  {% if page.languages contains "sr" %}
+    {% assign locale = "sr" %}
+  {% endif %}
+{% endunless %}

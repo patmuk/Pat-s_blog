@@ -1,7 +1,6 @@
 ---
 layout: single
-title: "(Deutsch) Mercurial Brücke zu Subversion: Mercurial lokal, Subversion auf
-  dem Server"
+title: "Mercurial Brücke zu Subversion: Mercurial lokal, Subversion auf dem Server"
 date: 2016-02-09 13:28:40.000000000 +01:00
 type: posts
 published: true
@@ -19,8 +18,11 @@ author:
   display_name: patmuk
   first_name: ''
   last_name: ''
+languages:
+  de
 ---
-<p>{% if site.locale == "de" %}Falls man nicht <a href="http://patrick.mukherjee.de/?page_id=31">PlatinVC</a> nutzen will/kann, man, noch viel schlimmer, einen Subversion-Server benutzen muss, kann man trotzdem mercurial lokal mit all seinen Vorteilen nutzen. Änderungen können erst lokal eingecheckt werden und dann global zum Subversionserver gepuscht werden. Aus der Sicht des Servers erkennt man keinen Unterschied.<br />
+{% include fallback_lang_support %}
+<p>{% if locale == "de" %}Falls man nicht <a href="http://patrick.mukherjee.de/?page_id=31">PlatinVC</a> nutzen will/kann, man, noch viel schlimmer, einen Subversion-Server benutzen muss, kann man trotzdem mercurial lokal mit all seinen Vorteilen nutzen. Änderungen können erst lokal eingecheckt werden und dann global zum Subversionserver gepuscht werden. Aus der Sicht des Servers erkennt man keinen Unterschied.<br />
 <!--more--><br />
 Vorteil: Man kann lokal viele kleine Schritte versionieren, die das Projekt für andere unkompilierbar werden lassen würden, und branches nach belieben anlegen.</p>
 <p>Hat man einen Stand erreicht, bei dem das Projekt wieder kompilierbar ist, kann man alle commits gleichzeitig zum Subversion Server schicken (wobei auch lokal angelegte Branches lokal bleiben können).</p>
@@ -29,7 +31,7 @@ Vorteil: Man kann lokal viele kleine Schritte versionieren, die das Projekt für
 <a href="http://mercurial.selenic.com/wiki/WorkingWithSubversion">http://mercurial.selenic.com/wiki/WorkingWithSubversion</a><br />
 <a href="http://mercurial.selenic.com/wiki/HgSubversionhg">http://mercurial.selenic.com/wiki/HgSubversionhg</a><br />
 <a href="http://mercurial.aragost.com/kick-start/en/hgsubversion/">http://mercurial.aragost.com/kick-start/en/hgsubversion/</a>)<br />
-{% endif %}<!--more-->{% if site.locale == "de" %}</p>
+{% endif %}<!--more-->{% if locale == "de" %}</p>
 <p>1. hgsubversion Erweiterung installieren:</p>
 <p><code>hg clone http://bitbucket.org/durin42/hgsubversion/ <em>Zielverzeichnis</em></code></p>
 <p>Als <em>Zielverzeichnis</em> empfehle ich:<br />

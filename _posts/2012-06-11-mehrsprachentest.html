@@ -15,5 +15,8 @@ author:
   display_name: patmuk
   first_name: ''
   last_name: ''
+languages:
+  de
 ---
-<p>{% if site.locale == "de" %}Das hier gibt's nur auf deutsch!{% endif %}</p>
+{% include fallback_lang_support %}
+<p>{% if locale == "de" %}Das hier gibt's nur auf deutsch!{% endif %}</p>

@@ -16,15 +16,19 @@ author:
   display_name: patmuk
   first_name: ''
   last_name: ''
+languages:
+  de
+  en
 ---
-<p>{% if site.locale == "de" %}Die Sprachenauswahl kann man auch schöner, mit horizontalen Flaggen anzeigen lassen.</p>
+{% include fallback_lang_support %}
+<p>{% if locale == "de" %}Die Sprachenauswahl kann man auch schöner, mit horizontalen Flaggen anzeigen lassen.</p>
 <p>Zuerst erstellt man am besten ein "<a href="http://codex.wordpress.org/Child_Themes" layout: single\rtitle="how to create a child theme" target="_blank">Child Theme</a>".</p>
 <p>Dann einfach folgendes zur Style.css hinzufügen (unter Design -> Editor):<br />
-{% endif %}{% if site.locale == "en" %}The language-choise flags can be presented in a nicer way, with horizontally aligned flags:<br />
+{% endif %}{% if locale == "en" %}The language-choise flags can be presented in a nicer way, with horizontally aligned flags:<br />
 ! update from 2/4/2014 !<br />
 It is best to first <a href="http://codex.wordpress.org/Child_Themes" layout: single\rtitle="how to create a child theme">create a "Child Theme"</a>.<br />
 Next, add the following lines to your Style.css (in 'Design' -> 'Editor'):<br />
-{% endif %}<!--more-->{% if site.locale == "de" %}<br />
+{% endif %}<!--more-->{% if locale == "de" %}<br />
 <code><br />
 /*--------------------------------*/<br />
 /** flags horizontal */<br />
@@ -37,7 +41,7 @@ a.qtrans_flag { margin-left: 10px; margin-top: 0px }<br />
 <em>ul.qtrans_language_chooser li</em> ist nun jeder Listeneintrag. <em>display: inline</em> bestimmt, dass die Flaggen in der Liste angezeigt werden, <em>float: left</em>, dass diese linksbündig positioniert werden und <em>position: relative</em>, dass die folgenden Positionsangaben relativ zu den anderen Elementen auf der Seite interpretiert werden sollen.<br />
 <em>a.qtrans_flag</em> ist nun die Flagge selbst (bzw. der Link),  <em>margin-left: 10px</em> gibt an, dass links von jeder Flagge 10 Pixel Platz sein soll, während <em>margin-top: 0px</em> angibt, dass über den Flaggen kein Platz reserviert wird.</p>
 <p>Hier kann man natürlich alle gängigen <a href="http://www.w3schools.com/css/css_list.asp">CSS Listenattribute</a> nutzen.<br />
-{% endif %}{% if site.locale == "en" %}<br />
+{% endif %}{% if locale == "en" %}<br />
 <code><br />
 /*--------------------------------*/<br />
 /** flags horizontal */<br />

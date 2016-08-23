@@ -15,8 +15,12 @@ author:
   display_name: patmuk
   first_name: ''
   last_name: ''
+languages:
+  de
+  en
 ---
-<p>{% if site.locale == "de" %}Meine Freude über die ersten Kommentare verflog schnell, als ich genauer hinschaute: Alles SPAM. Gezielt abgestimmt auf Blogs. Nur findet man diese nicht so leicht, da ja kaum einer das absichtlich in seinem Blog stehen lässt.<br />
+{% include fallback_lang_support %}
+<p>{% if locale == "de" %}Meine Freude über die ersten Kommentare verflog schnell, als ich genauer hinschaute: Alles SPAM. Gezielt abgestimmt auf Blogs. Nur findet man diese nicht so leicht, da ja kaum einer das absichtlich in seinem Blog stehen lässt.<br />
 Damit man per Google-Suche verdächtige Kommentare findet und als SPAM enttarnen kann werde ich diese hier auflisten.</p>
 <p>Bitte fügt auch eigene gefundene SPAM-Kommentare hinzu. Ausnahmsweise ist das mal erlaubt, aber nur in diesem Post :) Also: SPAM ahoi und guten Appetit!</p>
 <p>EDIT: Ich habe es mir anders überlegt ... nur einen Mont später, und ich habe schon 58 SPAM Kommentare bekommen! Ich werde wohl ein SPAM-Filter Plugin installieren müssen ...</p>
@@ -48,7 +52,7 @@ Submitted on 2012/07/16 at 7:25 pm<br />
 Every weekend i used to visit this web site, for the reason<br />
 that i wish for enjoyment, as this this web page conations in fact fastidious funny material too.<br />
 ------</p>
-<p>Also: Bitte (doch) nicht SPAMen! Auch nicht in diesen Honigtopf!{% endif %}{% if site.locale == "en" %}The first comments in my blog turned out to be SPAM. But identifying it is not that easy as a google search does not show many hits.<br />
+<p>Also: Bitte (doch) nicht SPAMen! Auch nicht in diesen Honigtopf!{% endif %}{% if locale == "en" %}The first comments in my blog turned out to be SPAM. But identifying it is not that easy as a google search does not show many hits.<br />
 For everybody who is unsure I created this post: Here I will list all SPAM comments I receive. Please feel free to add you own SPAM findings in the comments. I never thought I would say that ... so, permission granted, but only for this post!</p>
 <p>So: go SPAM and enjoy your meal ;)</p>
 <p>EDIT: I changed my mind ... only a month after this post and I got 58 SPAM comments! I will install a SPAM sorting plugin ...<br />

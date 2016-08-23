@@ -16,8 +16,12 @@ author:
   display_name: patmuk
   first_name: ''
   last_name: ''
+languages:
+  de
+  en
 ---
-<p>{% if site.locale == "de" %}Vor kurzem habe ich mich gegen einen selbstgebauten Server und für einen älteren Mac Pro entschieden. Das kostete mich zwar ca. 200€ mehr, aber dafür kann ich OS X nutzen, dass weniger Zeit zum Babysitten verschlingt.</p>
+{% include fallback_lang_support %}
+<p>{% if locale == "de" %}Vor kurzem habe ich mich gegen einen selbstgebauten Server und für einen älteren Mac Pro entschieden. Das kostete mich zwar ca. 200€ mehr, aber dafür kann ich OS X nutzen, dass weniger Zeit zum Babysitten verschlingt.</p>
 <p>Aber ohne ein wenig hacken bin ich natürlich nicht ausgekommen ;)<br />
 <!--more So habe ich den Mac Pro auf 5.1 erneuert und Apples Hardware Tests von einem USB-Stick ausgeführt:--></p>
 <p>Um Mac Pro 4.1 (Frühjahr 2009) auf 5.1 (Mitte 2010) zu bringen muss man nur ein Programm ausführen, wie <a href="http://www.yourdailymac.net/2011/05/how-to-upgrade-your-mac-pro-2009-to-the-mac-pro-2010-firmware-supports-faster-cpus-and-memory/">hier</a> beschrieben.</p>
@@ -39,7 +43,7 @@ cd /Volumes/AHTDOne/ && sudo bless --mount /Volumes/AHTDOne --setBoot --file dia
 (Wobei man eventuell "AHTDOne" durch den vergebenen Namen des Sticks ersetzen muss, solute diesel abweichen.)</p>
 <p>Jetzt sollte der Mac direct vom USB-Stick in den Testmodus booten. Sind die Tests durchgelaufen muss man den Stick entfernen, um wieder nach OS X zu booten.<br />
 Vielen Dank an http://rivenbyfive.blogspot.de/2012/01/download-and-run-apple-hardware-test.html, durch den ich auf diesen Lösungsweg gestoßen bin!{% endif %}<br />
-{% if site.locale == "en" %}I recently decided against building my own server from ordered parts and simply bought an older Mac Pro for a good value. It was roughly 200€ more than the build-it-yourself way, but therefor it can run OS X smoothly, which saves me time where I don't need to babysit my machine.</p>
+{% if locale == "en" %}I recently decided against building my own server from ordered parts and simply bought an older Mac Pro for a good value. It was roughly 200€ more than the build-it-yourself way, but therefor it can run OS X smoothly, which saves me time where I don't need to babysit my machine.</p>
 <p>Nevertheless, it can not go without a bit of hacking.<br />
 <!--more read on how to upgrade to 5.1 and run Apple's Hardware Tests from an USB Stick--></p>
 <p>Upgrading it to the next year's version (from 4.1 (early 2009) to 5.1 (mid 2010)) is as easy as running a program, just follow <a href="http://www.yourdailymac.net/2011/05/how-to-upgrade-your-mac-pro-2009-to-the-mac-pro-2010-firmware-supports-faster-cpus-and-memory/">these instructions</a>.</p>

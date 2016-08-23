@@ -18,8 +18,12 @@ author:
   display_name: patmuk
   first_name: ''
   last_name: ''
+languages:
+  de
+  en
 ---
-<p>{% if site.locale == "de" %}<br />
+{% include fallback_lang_support %}
+<p>{% if locale == "de" %}<br />
 ... es ist schon lange her, dass ich etwas gepostet habe ... und dann kommt jetzt auch nur ein kurzer Post ;)</p>
 <p>Wenn ich danach gefragt werde, warum ich Mercurial bevorzuge hatte ich bisher kein starkes Argument parat.<br />
 <!--more--><br />
@@ -34,7 +38,7 @@ fast es gut zusammen (ohne git zu bashen zeigt er 10 gute Argumente, warum git s
 <a href="https://people.gnome.org/~newren/eg/">EasyGit</a> hilft dabei, die Commandos sinnvoller zu gestallten,<br />
 und <a href="http://think-like-a-git.net">think-like-git</a> ist eine hervorragende Quelle, um sich in git hineinzudenken :)<br />
 Und wer visuell besser versteht ist <a href="https://marklodato.github.io/visual-git-guide/index-en.html">hier</a> gut aufgehoben.</p>
-<p>{% endif %}{% if site.locale == "en" %}... it has been a while since I posted last time ... and now basically just a post about some links is following ;)</p>
+<p>{% endif %}{% if locale == "en" %}... it has been a while since I posted last time ... and now basically just a post about some links is following ;)</p>
 <p>When I am asked why I prefer Mercurial over git I did not have a real strong argument.<br />
 All-in-all they are conceptually very similar, and one can do everything with Mercurial what one can do with git.<br />
 <!--more--><br />

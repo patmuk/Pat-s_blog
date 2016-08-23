@@ -21,8 +21,12 @@ author:
   display_name: patmuk
   first_name: ''
   last_name: ''
+languages:
+  de
+  en
 ---
-<p>{% if site.locale == "de" %}<br />
+{% include fallback_lang_support %}
+<p>{% if locale == "de" %}<br />
 Ich habe mir wieder gpg-keys zugelegt.<br />
 Hier meine empfohlenen Schritte:<br />
 1. Erstmal einen oder mehrere Keys anlegen:<br />
@@ -43,7 +47,7 @@ gpg –send-keys</p>
 <p>… mir ist beim Ausprobieren ein kleineres Maleur passiert … ich habe einen (Sub-)Schlüssel erstellt, diesen veröffentlicht und vor dem löschen nicht zurückgezogen. Nun bleibt er leider für ewig online und wird jeden verwirren, der meinen Schlüssel sucht.<br />
 Also, bitte verwendet nicht diese Schlüssel (da sie nirgends existieren):</p>
 <p>{% endif %}<br />
-{% if site.locale == "en" %}<br />
+{% if locale == "en" %}<br />
 I (re-)created gpg-keys.<br />
 Here my recommended steps:<br />
 1. First create one or more keys:<br />

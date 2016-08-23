@@ -18,14 +18,18 @@ author:
   display_name: patmuk
   first_name: ''
   last_name: ''
+languages:
+  de
+  en
 ---
-<p>{% if site.locale == "de" %}Zur Übersetzung der Posts verwende ich qTranslate.</p>
+{% include fallback_lang_support %}
+<p>{% if locale == "de" %}Zur Übersetzung der Posts verwende ich qTranslate.</p>
 <p>Leider hat dies die Übersetzungen einiger der Theme-Elemente, wie "Hinterlasse eine Antwort" statt "leave a reply" überschrieben, so dass diese nur auf englisch angezeigt wurden.<br />
 Abhilfe: Neuste Sprachdateien runterladen und installieren:<br />
 Zu finden unter:<br />
 http://svn.automattic.com/wordpress-i18n/de_DE/trunk/messages/twentyeleven/<br />
 Dateien: *.po und *.mo kopieren nach:<br />
-[WordpressInstallation]/wp-content/themes/twentyeleven/languages{% endif %}{% if site.locale == "en" %}
+[WordpressInstallation]/wp-content/themes/twentyeleven/languages{% endif %}{% if locale == "en" %}
 <p>I use qTranslate to multilingualize my posts.</p>
 <p>Saidly installing it overwrote some translations that have been working before. For example, "Hinterlasse eine Antwort" (german) should be shown instead of "leave a reply", which isn't.</p>
 <p>The solution: (Re-)Install the latest translation files:</p>

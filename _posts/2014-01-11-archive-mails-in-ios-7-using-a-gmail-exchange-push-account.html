@@ -17,8 +17,12 @@ author:
   display_name: patmuk
   first_name: ''
   last_name: ''
+languages:
+  de
+  en
 ---
-<p>{% if site.locale == "de" %}Der 'Löschen' Knopf hat unter iOS 7 ein anderes Verhalten: Er verschiebt die meine GMails in den 'Papierkorb', statt sie zu archivieren.<br />
+{% include fallback_lang_support %}
+<p>{% if locale == "de" %}Der 'Löschen' Knopf hat unter iOS 7 ein anderes Verhalten: Er verschiebt die meine GMails in den 'Papierkorb', statt sie zu archivieren.<br />
 <!--more So kann man das beheben--></p>
 <p>Gmail auf meinem iPhone nutze ich mit dem Exchange Protokoll (ExchangeAccountSync), da dadurch push Mails unterstützt werden. Da Google diesen Dienst für neue Benutzer deaktiviert hat, ist es nicht mehr möglich das so aufzusetzen.<br />
 Hat man es schon so konfiguriert, kann man den Dienst auch weiterhin, auch trotz iOS upgrade, weiter nutzen. Laut Gerüchten verliert man die Funktion erst, wenn man das Greät wechselt ...<br />
@@ -35,7 +39,7 @@ aufrufen.<br />
 <p>Voilà! Obwohl es in der Mail app "Löschen" heißt wird die Mail nun archiviert.<br />
 Bei Problemen könnt Ihr den Anweisungen unter https://support.google.com/a/users/answer/138740?hl=en<br />
 folgen.<br />
-{% endif %}{% if site.locale == "en" %}The behavior of the <em>delete button</em> changed in iOS 7: It no longer archives gmails but moves them to trash.<br />
+{% endif %}{% if locale == "en" %}The behavior of the <em>delete button</em> changed in iOS 7: It no longer archives gmails but moves them to trash.<br />
 <!--more see how to restore the old behavior--></p>
 <p>I set up my gmail account on my iPhone to use the exchange protocol, as this enables push mails. Google no longer supports this service (ExchangeAccountSync), you can only continue to use it if you did so in the past.<br />
 It will remain usable no matter if you upgrade your iPhone to a later iOS version (I did it running iOS 7 at the time of this writing).<br />
@@ -49,4 +53,4 @@ Here choose your device and remove the hook from 'Enable "Delete Email As Trash"
 <p>Voilà! Although it is labeled "trash mail" in iOS's Mail app the behavior is to archive the mail.<br />
 Check out the instructions in https://support.google.com/a/users/answer/138740?hl=en<br />
 should you ran into problems.<br />
-{% endif %}{% if site.locale == "sr" %}<strong></strong><strong></strong><strong></strong><strong>{% endif %}</strong></p>
+{% endif %}
