@@ -1,5 +1,5 @@
 ---
-
+layout: single
 title: secure gpg keys
 date: 2012-07-24 16:18:43.000000000 +02:00
 type: posts
@@ -22,7 +22,7 @@ author:
   first_name: ''
   last_name: ''
 ---
-<p><!--:de--><br />
+<p>{% if site.locale == "de" %}<br />
 Ich habe mir wieder gpg-keys zugelegt.<br />
 Hier meine empfohlenen Schritte:<br />
 1. Erstmal einen oder mehrere Keys anlegen:<br />
@@ -42,8 +42,8 @@ gpg -a –export-secret-keys | gpg -aco privKey_.asc</p>
 gpg –send-keys</p>
 <p>… mir ist beim Ausprobieren ein kleineres Maleur passiert … ich habe einen (Sub-)Schlüssel erstellt, diesen veröffentlicht und vor dem löschen nicht zurückgezogen. Nun bleibt er leider für ewig online und wird jeden verwirren, der meinen Schlüssel sucht.<br />
 Also, bitte verwendet nicht diese Schlüssel (da sie nirgends existieren):</p>
-<p><!--:--><br />
-<!--:en--><br />
+<p>{% endif %}<br />
+{% if site.locale == "en" %}<br />
 I (re-)created gpg-keys.<br />
 Here my recommended steps:<br />
 1. First create one or more keys:<br />
@@ -63,6 +63,6 @@ gpg -a --export-secret-keys <id> | gpg -aco privKey_<id>.asc </p>
 gpg --send-keys <id></p>
 <p>... while trying around I made a mistake and deleted my key prior revoking the key. Now the wrongly published keys are stored online for all eternety and will confuse people, who look for my key.<br />
 So, please, do not use these keys, as they do not exist anymore:<br />
-<!--:--><br />
+{% endif %}<br />
 <a href="http://pgp.surfnet.nl/pks/lookup?op=get&search=0x3A5F851AC80A87DF">2048R/C80A87DF</a><br />
 <a href="http://pgp.surfnet.nl/pks/lookup?op=get&search=0xD60D17993BD998A9">2048R/3BD998A9</a></id></id></id></id></id></id></id></id></p>

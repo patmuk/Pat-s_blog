@@ -1,5 +1,5 @@
 ---
-
+layout: single
 title: xtend pass functions as parameters to other functions
 date: 2012-08-09 11:21:01.000000000 +02:00
 type: posts
@@ -16,9 +16,9 @@ author:
   first_name: ''
   last_name: ''
 ---
-<p><!--:de-->Alles in xtend ist eine <em>Expression</em>. Dadurch ist es möglich eine Methode einer anderen Methode als Parameter zu übergeben, wie hier beschrieben:<br />
-<!--:--><!--:en-->In xtend everything is an <em>expression</em>. Thus you can pass a method to another method as a parameter in the following way:<br />
-<!--:--><!--more--><!--:de--></p>
+<p>{% if site.locale == "de" %}Alles in xtend ist eine <em>Expression</em>. Dadurch ist es möglich eine Methode einer anderen Methode als Parameter zu übergeben, wie hier beschrieben:<br />
+{% endif %}{% if site.locale == "en" %}In xtend everything is an <em>expression</em>. Thus you can pass a method to another method as a parameter in the following way:<br />
+{% endif %}<!--more-->{% if site.locale == "de" %}</p>
 <p>Wir brauchen dafür die folgenden Methoden:<br />
 (1) Die <strong><em>calledFunction</em></strong>, welche als Argument übergeben wird,<br />
 (2) die <strong><em>callingFunction</em></strong>, welche die calledFunction übergibt<br />
@@ -51,7 +51,7 @@ genericFunction([calledFunction])<br />
 <code>def Type callingFunction(){<br />
 genericFunction(calledFunction)<br />
 }</code></p>
-<p>Ich bevorzuge A, da (1) und (3) wie immer implementiert werden und in (2) die Übergabe einer Funktion als Parameter deutlich erkennbar ist.<!--:--><!--:en--></p>
+<p>Ich bevorzuge A, da (1) und (3) wie immer implementiert werden und in (2) die Übergabe einer Funktion als Parameter deutlich erkennbar ist.{% endif %}{% if site.locale == "en" %}</p>
 <p>We need the players:<br />
 (1) The <strong><em>calledFunction</em></strong>, which is passed as an argument,<br />
 (2) the <strong><em>callingFunction</em></strong>, which hands over the calledFunction,<br />
@@ -90,4 +90,4 @@ def Type callingFunction(){<br />
 genericFunction(calledFunction)<br />
 }<br />
 </code></p>
-<p>I prefer A, as (1) and (3) are used normally and in (2) it is visible, that a function is given as a parameter.<!--:--></p>
+<p>I prefer A, as (1) and (3) are used normally and in (2) it is visible, that a function is given as a parameter.{% endif %}</p>

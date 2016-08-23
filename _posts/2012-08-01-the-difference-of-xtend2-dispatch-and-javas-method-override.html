@@ -1,5 +1,5 @@
 ---
-
+layout: single
 title: The difference of xtend(2) dispatch and Java's method override
 date: 2012-08-01 15:18:32.000000000 +02:00
 type: posts
@@ -27,9 +27,9 @@ author:
   first_name: ''
   last_name: ''
 ---
-<p><!--:de-->Theoretisch gesprochen liegt der Unterschied darin, dass Javas Methoden-Überladung ein "single dispatch" und xtends "dispatch" ein "polymorphisches dispatch" ist. Diese theoretische Aussage wird am Beispiel viel klarer:<br />
-<!--:--><!--:en-->The difference is single dispatch vs polymorphic dispatch. This theoretical concept becomes more clear with a comprehensive example:<br />
-<!--:--><!--more--><!--:de--><br />
+<p>{% if site.locale == "de" %}Theoretisch gesprochen liegt der Unterschied darin, dass Javas Methoden-Überladung ein "single dispatch" und xtends "dispatch" ein "polymorphisches dispatch" ist. Diese theoretische Aussage wird am Beispiel viel klarer:<br />
+{% endif %}{% if site.locale == "en" %}The difference is single dispatch vs polymorphic dispatch. This theoretical concept becomes more clear with a comprehensive example:<br />
+{% endif %}<!--more-->{% if site.locale == "de" %}<br />
 Nehmen wir an, wir haben folgende <code>print</code>-Methode, die den Typ und Inhalt eines Parameters ausgibt:</p>
 <p><code><br />
     public class Printer {<br />
@@ -98,7 +98,7 @@ Es wird immer die Methode mit dem speziefischeren Parameter aufgerufen. Mit der 
 <p>Quellen & Kudos:<br />
 http://www.2ality.com/2009_05_01_archive.html<br />
 and<br />
-http://www.eclipse.org/xtend/documentation/index.html#polymorphicDispatch<!--:--><!--:en--><br />
+http://www.eclipse.org/xtend/documentation/index.html#polymorphicDispatch{% endif %}{% if site.locale == "en" %}<br />
 Let's assume we have a method <code>print</code> which is printing the type of an argument along this the content. With method overloading the java code would look like this:</p>
 <p><code><br />
     public class Printer {<br />
@@ -167,4 +167,4 @@ This way the method with the more specific parameter is choosen, while using jav
 <p>Sources & kudos:<br />
 http://www.2ality.com/2009_05_01_archive.html<br />
 and<br />
-http://www.eclipse.org/xtend/documentation/index.html#polymorphicDispatch<!--:--></code></object></code></code></object></code></p>
+http://www.eclipse.org/xtend/documentation/index.html#polymorphicDispatch{% endif %}</code></object></code></code></object></code></p>

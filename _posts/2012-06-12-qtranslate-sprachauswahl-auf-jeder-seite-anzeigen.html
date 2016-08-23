@@ -1,5 +1,5 @@
 ---
-
+layout: single
 title: show qTranslate on every page
 date: 2012-06-12 10:03:09.000000000 +02:00
 type: posts
@@ -17,7 +17,7 @@ author:
   first_name: ''
   last_name: ''
 ---
-<p><!--:de-->Beim öffnen eines Posts wird mit dem Theme 'Twenty Eleven' keine sidebar angezeigt.<br />
+<p>{% if site.locale == "de" %}Beim öffnen eines Posts wird mit dem Theme 'Twenty Eleven' keine sidebar angezeigt.<br />
 Somit wird das 'qTranslate choose language'-widged auch nicht angezeigt.<br />
 Abhilfe:<br />
 In die header.php des Themes<br />
@@ -33,7 +33,7 @@ folgendes einfügen:<br />
 </code><br />
 'image' zeigt nur die Flaggen an,<br />
 'text' nur den Text und beides erhält man mit<br />
-'both'<!--:--><!--:en-->If I open a post using the theme 'Twenty Eleven' no sidebar is shown.<br />
+'both'{% endif %}{% if site.locale == "en" %}If I open a post using the theme 'Twenty Eleven' no sidebar is shown.<br />
 So the 'qTranslate choose language'-widged is not shown either.<br />
 The solution:<br />
 Add in the header.php-file of the theme<br />
@@ -49,4 +49,4 @@ the following lines:<br />
 </code><br />
 'image' displays only Flaggs,<br />
 'text' only the textual representation and<br />
-'both' shows the flaggs along with the text.<!--:--></p>
+'both' shows the flaggs along with the text.{% endif %}</p>

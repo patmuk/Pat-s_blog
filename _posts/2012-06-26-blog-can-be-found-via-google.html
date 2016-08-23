@@ -1,5 +1,5 @@
 ---
-
+layout: single
 title: blog can be found via Google
 date: 2012-06-26 17:07:07.000000000 +02:00
 type: posts
@@ -16,9 +16,9 @@ author:
   first_name: ''
   last_name: ''
 ---
-<p><!--:de-->Vor 18 Tagen habe ich diesen Blog ins Leben gerufen. Heute wurde ich durch Google informiert, dass der Blog gecrawlt wurde, also durch Google auffindbar ist. Ohne jegliche Bitte um Einbindung.<br />
+<p>{% if site.locale == "de" %}Vor 18 Tagen habe ich diesen Blog ins Leben gerufen. Heute wurde ich durch Google informiert, dass der Blog gecrawlt wurde, also durch Google auffindbar ist. Ohne jegliche Bitte um Einbindung.<br />
 Woher ich das weis? Ich monitore die Verwendung meines Namens per http://www.google.com/alerts.<br />
-Kann ich nur empfehlen - so bemerkt man, wenn etwas über einen veröffentlicht wird.<!--:--><!--:en-->18 days ago I started this blog. Today Google notified me that my Blog has been crawled and can be found via a google search. Without any action on my side to be registered.<br />
+Kann ich nur empfehlen - so bemerkt man, wenn etwas über einen veröffentlicht wird.{% endif %}{% if site.locale == "en" %}18 days ago I started this blog. Today Google notified me that my Blog has been crawled and can be found via a google search. Without any action on my side to be registered.<br />
 Well, they did not exactly notified my, but I got informed by monitoring the usage of my name in the web.<br />
 This can be done using http://www.google.com/alerts, which I can highly recommend!<br />
-<!--:--></p>
+{% endif %}</p>

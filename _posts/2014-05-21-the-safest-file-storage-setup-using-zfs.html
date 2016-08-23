@@ -1,5 +1,5 @@
 ---
-
+layout: single
 title: the safest file storage setup (using zfs)
 date: 2014-05-21 20:23:06.000000000 +02:00
 type: posts
@@ -16,13 +16,13 @@ author:
   first_name: ''
   last_name: ''
 ---
-<p><!--:en--><br />
+<p>{% if site.locale == "en" %}<br />
 I recently set up a file storage with the purpose of being super safe.<br />
 Here is what one needs to do and why:<br />
 <!--more--></p>
 <p>1. First one needs a machine which supports ECC RAM.<br />
 Why? It is not so much the correction of a faulty bit which matters, but to avoid any faulty bit to be undetected, as a ECC supporting machine (RAM, CPU and Motherboard needs to support it) halts on RAM errors.<br />
-To illustrate why this is important imagine the second and third bits in your RAM are faulty, meaning they stick to the state '1' permanently. Every time a file is read to ram and written to disk (when editing or copying) the file will be corrupted - the second and third bit will be changed to '1' no matter what it really is (simplified example). When using ZFS this will be even more disastrous: The checksum for each file will be calculated wrong, and in the effort to repair the wrongly presumed file with the parity copy it will be written corrupted. All files would be lost! See another explanation in the <a href="http://forums.freenas.org/index.php?threads/ecc-vs-non-ecc-ram-and-zfs.15449/" title="Why ECC is important for zfs">FreeNAS Forum</a>.</p>
+To illustrate why this is important imagine the second and third bits in your RAM are faulty, meaning they stick to the state '1' permanently. Every time a file is read to ram and written to disk (when editing or copying) the file will be corrupted - the second and third bit will be changed to '1' no matter what it really is (simplified example). When using ZFS this will be even more disastrous: The checksum for each file will be calculated wrong, and in the effort to repair the wrongly presumed file with the parity copy it will be written corrupted. All files would be lost! See another explanation in the <a href="http://forums.freenas.org/index.php?threads/ecc-vs-non-ecc-ram-and-zfs.15449/" layout: single\rtitle="Why ECC is important for zfs">FreeNAS Forum</a>.</p>
 <p>As a side note: An external storage or NAS, like a synology, etc, will not be sufficient. First only a few, "pro" graded systems have dcc ram. But when your computer does have normal RAM which is faulty, it will corrupt the file and copy it to the NAS's ECC RAM, which will write the corrupted file to disk, as it can not detect the corruption. So, when editing or downloading a file better do it on the storage machine directly and not with a non-ECC machine.</p>
 <p>2. Use ZFS.<br />
 Why? ZFS maintains data integrity and avoids silent failures. ZFS is not only self-healing, and self-checking, it does not have a write-whole as a hardware raid, for example. In any other RAID system a file would be corrupted when the machine fails while the file is written (as files are overwritten in most filesystems). ZFS copies-on-write, which means first a copy is written, then the to-be-overwritten file will be deleted. It has many other cool features too, but the avoidance of silent data corruption is most important to me. <a href="http://en.wikipedia.org/wiki/ZFS">Read here about ZFS</a>.</p>
@@ -59,4 +59,4 @@ For data thief safety have extra disk(s) where you back up your important data:<
 Either synchronise it using rsync, or ifs attach+resilver+detach, and bring it yourself to a save location.<br />
 Or use a cloud storage service - like dropbox or flicker (offers 1 TB for photos!). For the latter I still have to find out if the data is save from silent data corruption ... do they use ECC RAM and ZFS as well? Or a better alternative?</p>
 <p>If you read the whole post (wow!) here is a bonus for you: The best <a href="https://pthree.org/2012/04/17/install-zfs-on-debian-gnulinux/">ZFS manual</a> and a <a href="http://thegeekdiary.com/solaris-zfs-command-line-reference-cheat-sheet/">CheatSheet</a> I found!<br />
-<!--:--></p>
+{% endif %}</p>

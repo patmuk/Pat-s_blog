@@ -1,4 +1,5 @@
 ---
+layout: single
 title: Hello world!
 date: 2012-06-08 11:46:03.000000000 +02:00
 type: posts
@@ -16,4 +17,5 @@ author:
   first_name: ''
   last_name: ''
 ---
-<p><!--:de-->Das ist ein Probeeintrag.<!--:--><!--:en-->The is a test post.<!--:--></p>
+<p>
+  {% if site.locale == "de" %}Das ist ein Probeeintrag.{% endif %}{% if site.locale == "en" %}This is a test post.{% endif %}</p>

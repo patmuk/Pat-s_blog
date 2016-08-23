@@ -18,13 +18,13 @@ author:
   last_name: ''
 permalink: about.html
 ---
-<p><!--:de--><br />
+<p>{% if site.locale == "de" %}<br />
 Nutzt meinen <a href="http://pgp.surfnet.nl/pks/lookup?op=get&search=0x363DFD9CE2257D96" title="Public Key" target="_blank">public key</a> mit dem<br />
 Fingerprint: 92C5 31F8 3725 2925 3247  2D9B 363D FD9C E225 7D96 </p>
 <p>mehr folgt bald<br />
-<!--:--><br />
-<!--:en--><br />
+{% endif %}<br />
+{% if site.locale == "en" %}<br />
 Use my <a href="http://pgp.surfnet.nl/pks/lookup?op=get&search=0x363DFD9CE2257D96" title="Public Key" target="_blank">public key</a> with the<br />
 Fingerprint: 92C5 31F8 3725 2925 3247  2D9B 363D FD9C E225 7D96 </p>
 <p>more coming soon<br />
-<!--:--></p>
+{% endif %}</p>

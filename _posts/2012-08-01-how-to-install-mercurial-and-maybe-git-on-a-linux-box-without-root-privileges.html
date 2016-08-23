@@ -1,5 +1,5 @@
 ---
-
+layout: single
 title: How to Install mercurial (and maybe git) on a linux box without root privileges
 date: 2012-08-01 09:27:42.000000000 +02:00
 type: posts
@@ -20,10 +20,10 @@ author:
   first_name: ''
   last_name: ''
 ---
-<p><!--:de-->Falls man auf einer Linux-Maschine ohne root-Rechte nicht auf mercurial (oder git) verzichten will kann man diesen Anweisungen folgen:<br />
-<!--:--><!--:en--><br />
+<p>{% if site.locale == "de" %}Falls man auf einer Linux-Maschine ohne root-Rechte nicht auf mercurial (oder git) verzichten will kann man diesen Anweisungen folgen:<br />
+{% endif %}{% if site.locale == "en" %}<br />
 If you happen to be on a linux box without root privileges you can nevertheless install the two very usefull distributed version control systems, git and mercurial:<br />
-<!--:--><!--:de--><br />
+{% endif %}{% if site.locale == "de" %}<br />
 <!--more--><br />
 === für mercurial ===<br />
 Voraussetzungen:<br />
@@ -61,8 +61,8 @@ https://github.com/git/git/tags/<br />
 (e.g.) <code>vi ~/.bash.profile</code><br />
 <code>PATH=$PATH;</code><em>&lt;Zielverzeichnis&gt;</em><code>/bin/git</code></p>
 <p>Wobei natürlich <em>&lt;Zielverzeichnis&gt;</em> für das Verzeichnis steht, in dem die Binärdateien liegen sollen. Dieses Verzeichnis muss natürlich zugreifbar sein (z.B. /local/user/bin/git)!<br />
-=======<!--:--><br />
-<!--:en--><br />
+======={% endif %}<br />
+{% if site.locale == "en" %}<br />
 === for mercurial ===<br />
 Prerequisites:<br />
 a. make should be installed (alternatively you can execute "python setup.py build_py -c -d . build_ext -i build_mo" in step 3.)<br />
@@ -98,5 +98,5 @@ https://github.com/git/git/tags/<br />
 (e.g.) <code>vi ~/.bash.profile</code><br />
 <code>add PATH=$PATH;</code><em>&lt;desired directory&gt;</em><code>/bin/git</code></p>
 <p>Of course, <em>&lt;desired directory&gt;</em> should be replaced by a directory where you want to have the bin files installed to, and which has to be accessible by you (e.g. <code>/local/user/bin/git</code>)!<br />
-=======<!--:--><!--:sr--><br />
-<!--:--></p>
+======={% endif %}{% if site.locale == "sr" %}<br />
+{% endif %}</p>
